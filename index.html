@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana T - Animated Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="style">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            background-color: #eef1f7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        h1,
+        h2 {
+            color: #0056b3;
+        }
+        
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="resumeContainer">
+        <header class="text-center">
+            <h1>Archana T</h1>
+            <p>Trainer | Python Developer | WordPress Developer | UI Designer</p>
+            <p>Email: techarchie3@gmail.com | Phone: +91 9969166913</p>
+            <p>
+                <a href="https://archana4290.github.io/portfolio/">Portfolio</a> |
+                <a href="https://github.com/Archana4290">GitHub</a> |
+                <a href="http://www.linkedin.com/in/archana-t-41a6031b0">LinkedIn</a>
+            </p>
+        </header>
+
+        <section class="section my-4">
+            <h2>Summary</h2>
+            <p>Experienced developer skilled in frontend and backend technologies, UI/UX design, and web development. Passionate about building scalable and high-performance web applications.</p>
+        </section>
+
+        <section class="section my-4">
+            <h2>Skills</h2>
+            <ul>
+                <li>Frontend - HTML5, CSS3, JavaScript, Bootstrap, Responsive Web Design, UI/UX Design, WordPress</li>
+                <li>Backend - Python, Django, Oracle SQL, API development</li>
+                <li>Tools - Figma, GitHub, ChatGPT, BlackBox.ai, Gemini AI</li>
+                <li>Other - Unity 2D/3D, Video Editing, Game Development</li>
+            </ul>
+        </section>
+
+        <section class="section my-4">
+            <h2>Experience</h2>
+            <h3>Yaazli Techy (Remote) - WordPress Developer</h3>
+            <p>Nov 2024 - Present</p>
+            <h3>TechInterex (Remote) - Python Developer</h3>
+            <p>Jan 2025 - Present</p>
+            <h3>Planet Spark (Remote) - Public Speaking Trainer</h3>
+            <p>Feb 2024 - June 2024</p>
+        </section>
+
+        <section class="section my-4">
+            <h2>Professional Projects</h2>
+            <ul>
+                <li>Food Delivery App UI Design</li>
+                <li>Ecommerce Frontend Development</li>
+                <li>Simple Django Dashboard with User Authentication</li>
+                <li>Complete WordPress Ecommerce Website</li>
+            </ul>
+        </section>
+
+        <section class="section my-4">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certification in Full Stack Development - Pantech Solutions & Warrior AI</li>
+                <li>Ongoing Certifications in Data Science, Cyber Security, AI, and Game Development</li>
+            </ul>
+        </section>
+
+        <section class="section my-4">
+            <h2>Education</h2>
+            <p><strong>BE (Electronics & Communication Engineering)</strong> - Francis Xavier Engineering College, Anna University</p>
+            <p><strong>PG Diploma (Embedded & VLSI Systems Design)</strong> - National Institute Of Electronics & Information Technology</p>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // GSAP animations
+        gsap.to("#resumeContainer", {
+            opacity: 1,
+            duration: 1.5,
+            y: 0
+        });
+        gsap.utils.toArray(".section").forEach(section => {
+            gsap.to(section, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
